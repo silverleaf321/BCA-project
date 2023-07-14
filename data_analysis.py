@@ -22,18 +22,26 @@ cbar = plt.colorbar(sm)
 cbar.set_label("Years of Experience")
 # plt.savefig("Salary_vs_Age_Scatterplot.png")
 
-# bar graph: education level vs salary
+# barplot: education level vs salary
 plt.figure(figsize=(10, 6))
 sns.barplot(data = df, x = df["Education Level"], y = df["Salary"])
 plt.xlabel("Education Level")
 plt.ylabel("Salary")
 plt.title("Education Level vs Salary Barplot")
-plt.savefig("Education_Level_vs_Salary_Barplot.png")
+# plt.savefig("Education_Level_vs_Salary_Barplot.png")
 
-# boxplot of salaries
+# boxplot: salaries
 plt.figure(figsize=(10, 6))
 sns.boxplot(data = df, x = df["Salary"])
 plt.title("Salary Boxplot")
 plt.xlabel("Salary")
 plt.ylabel("Values")
 # plt.savefig("Salary_Boxplot.png")
+
+# barplot: gender vs salary
+plt.figure(figsize=(10, 6))
+sns.barplot(data = df, x = df["Gender"], y = df["Salary"])
+plt.xlabel("Gender")
+plt.ylabel("Salary")
+plt.title("Gender vs Salary Barplot")
+plt.savefig("Gender_vs_Salary_Barplot.png")
