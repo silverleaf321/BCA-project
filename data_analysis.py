@@ -45,3 +45,4 @@ plt.xlabel("Gender")
 plt.ylabel("Salary")
 plt.title("Gender vs Salary Barplot")
 plt.savefig("Gender_vs_Salary_Barplot.png")
+
