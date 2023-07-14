@@ -44,8 +44,25 @@ sns.barplot(data = df, x = df["Gender"], y = df["Salary"])
 plt.xlabel("Gender")
 plt.ylabel("Salary")
 plt.title("Gender vs Salary Barplot")
+plt.savefig("Gender_vs_Salary_Barplot.png")
+
+# # barplot: gender vs education level
+# sns.countplot(data = df, x = df["Gender"], hue = df["Education Level"])
+# plt.savefig("Gender_vs_Education_Level_Barplot.png")
+# plt.figure(figsize=(10, 6))
+# salary_ranges = df["Salary"]
+# gender_counts = df.groupby('Salary')['Gender'].value_counts().unstack()
+# colors = ['blue', 'pink', 'purple']
+# gender_counts.plot(kind='bar', stacked=True, color=colors)
+# plt.xlabel("Salary")
+# plt.ylabel("Gender")
+# plt.title("Gender vs Salary Barplot")
 # plt.savefig("Gender_vs_Salary_Barplot.png")
 
-# barplot: gender vs education level
-
-# 
+# gender vs salary
+plt.figure(figsize=(10, 6))
+combined_df = [df["Gender"], df["Salary"]]
+labels = ["Gender", "Salary"]
+df = pd.DataFrame(dict(zip(labels, combined_df)))
+sns.boxplot(data = df, y = "Gender", x = "Salary")
+plt.savefig("Gender_vs_Salary_Boxplot.png")
