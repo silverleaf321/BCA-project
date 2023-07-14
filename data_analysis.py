@@ -1,18 +1,26 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 import seaborn as sns
+import data_cleanup
 
-path = "C:/Users/User/Silverleaf/Code'23/BCA-project/Salary_Data.csv"
-df = pd.read_csv(path)
+df = data_cleanup.df
 
 sns.set_style("darkgrid")
 sns.set_palette("bright")
 
 # scatterplot: age vs salary
-sns.scatterplot(data = df, x = df["Age"], y = df["Salary"])
+plt.figure(figsize=(10, 6))
+scatterplot = sns.scatterplot(data = df, x = df["Age"], y = df["Salary"], c = df["Years of Experience"], cmap = "viridis_r", edgecolors = "black")
 plt.xlabel("Age")
 plt.ylabel("Salary")
-plt.title("Salary vs Age Scatterplot")
+plt.title("Age vs Salary Scatterplot")
+
+sm = cm.ScalarMappable(cmap="viridis_r")
+sm.set_array(df["Years of Experience"])
+cbar = plt.colorbar(sm)
+cbar.set_label("Years of Experience")
+
 plt.savefig("Salary_vs_Age_Scatterplot.png")
 
 # scatterplot: education level vs salary
@@ -20,8 +28,8 @@ plt.figure(figsize=(10, 6))
 sns.scatterplot(data = df, x = df["Education Level"], y = df["Salary"])
 plt.xlabel("Education Level")
 plt.ylabel("Salary")
-plt.title("Salary vs Education Level Scatterplot")
-plt.savefig("Education_Level_vs_Salary_Scatterplot.png")
+plt.title("Education Level vs Salary Scatterplot")
+# plt.savefig("Education_Level_vs_Salary_Scatterplot.png")
 
 # boxplot of salaries
 plt.figure(figsize=(10, 6))
@@ -29,4 +37,4 @@ sns.boxplot(data = df, x = df["Salary"])
 plt.title("Salary Boxplot")
 plt.xlabel("Salary")
 plt.ylabel("Values")
-plt.savefig("Salary_Boxplot.png")
+# plt.savefig("Salary_Boxplot.png")
