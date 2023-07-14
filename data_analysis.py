@@ -7,7 +7,7 @@ import data_cleanup
 df = data_cleanup.df
 
 sns.set_style("darkgrid")
-sns.set_palette("bright")
+sns.set_palette("pastel")
 
 # scatterplot: age vs salary
 plt.figure(figsize=(10, 6))
@@ -15,21 +15,20 @@ scatterplot = sns.scatterplot(data = df, x = df["Age"], y = df["Salary"], c = df
 plt.xlabel("Age")
 plt.ylabel("Salary")
 plt.title("Age vs Salary Scatterplot")
-
+# color bar stuff
 sm = cm.ScalarMappable(cmap="viridis_r")
 sm.set_array(df["Years of Experience"])
 cbar = plt.colorbar(sm)
 cbar.set_label("Years of Experience")
+# plt.savefig("Salary_vs_Age_Scatterplot.png")
 
-plt.savefig("Salary_vs_Age_Scatterplot.png")
-
-# scatterplot: education level vs salary
+# bar graph: education level vs salary
 plt.figure(figsize=(10, 6))
-sns.scatterplot(data = df, x = df["Education Level"], y = df["Salary"])
+sns.barplot(data = df, x = df["Education Level"], y = df["Salary"])
 plt.xlabel("Education Level")
 plt.ylabel("Salary")
-plt.title("Education Level vs Salary Scatterplot")
-# plt.savefig("Education_Level_vs_Salary_Scatterplot.png")
+plt.title("Education Level vs Salary Barplot")
+plt.savefig("Education_Level_vs_Salary_Barplot.png")
 
 # boxplot of salaries
 plt.figure(figsize=(10, 6))
