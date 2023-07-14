@@ -11,7 +11,7 @@ sns.scatterplot(data = df, x = df["Age"], y = df["Salary"])
 plt.xlabel("Age")
 plt.ylabel("Salary")
 plt.title("Salary vs Age Scatterplot")
-plt.savefig("Salary_vs_Age_Scatterplot.png")
+plt.savefig("../plots/Salary_vs_Age_Scatterplot.png")
 
 
 
