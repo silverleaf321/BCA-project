@@ -20,7 +20,7 @@ sm = cm.ScalarMappable(cmap="viridis_r")
 sm.set_array(df["Years of Experience"])
 cbar = plt.colorbar(sm)
 cbar.set_label("Years of Experience")
-# plt.savefig("Salary_vs_Age_Scatterplot.png")
+plt.savefig("Age_vs_Salary_Scatterplot.png")
 
 # barplot: education level vs salary
 plt.figure(figsize=(10, 6))
@@ -44,5 +44,8 @@ sns.barplot(data = df, x = df["Gender"], y = df["Salary"])
 plt.xlabel("Gender")
 plt.ylabel("Salary")
 plt.title("Gender vs Salary Barplot")
-plt.savefig("Gender_vs_Salary_Barplot.png")
+# plt.savefig("Gender_vs_Salary_Barplot.png")
 
+# barplot: gender vs education level
+
+# 
