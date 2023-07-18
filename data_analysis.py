@@ -32,7 +32,7 @@ plt.title("Education Level vs Salary Barplot")
 
 # boxplot: salaries
 plt.figure(figsize=(10, 6))
-sns.boxplot(data = df, x = df["Salary"])
+sns.boxplot(data = df, x = df["Salary"]) 
 plt.title("Salary Boxplot")
 plt.xlabel("Salary")
 plt.ylabel("Values")
