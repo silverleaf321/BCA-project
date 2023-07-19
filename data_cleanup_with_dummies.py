@@ -7,4 +7,6 @@ data_with_dummies = pd.concat([df, dummies], axis = 1)
 dummies = pd.get_dummies(df["Gender"])
 data_with_dummies = pd.concat([data_with_dummies, dummies], axis = 1)
 
+# data_with_dummies = df.drop(data_with_dummies, columns = ["Education Level", "Gender", "Job Title"])
+
 data_with_dummies.to_csv("Salary_Data_with_dummies.csv", index = False)
