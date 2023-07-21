@@ -3,6 +3,12 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import seaborn as sns
 
+"""
+This code currently does not work.
+Name changes in Salary_Data.csv messed some stuff up.
+I'll fix it later
+"""
+
 path = "Salary_Data.csv"
 df = pd.read_csv(path)
 
