@@ -7,6 +7,7 @@ import seaborn as sns
 This code currently does not work.
 Name changes in Salary_Data.csv messed some stuff up.
 I'll fix it later
+Don't run this yet
 """
 
 path = "Salary_Data.csv"
