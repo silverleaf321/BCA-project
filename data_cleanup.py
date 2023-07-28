@@ -5,6 +5,7 @@ df = pd.read_csv(path)
 
 modes = df.mode().iloc[0]
 df.fillna(modes, inplace=True)
+df.replace({'phD':'PhD', "Master's Degree":"Master's", "Bachelor's Degree":"Bachelor's"}, inplace=True)
 
 null_counts = df.isnull().sum()
 total_null_values = null_counts.sum()
